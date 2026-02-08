@@ -150,7 +150,7 @@ function copyText(text) {
 
 function postGoogle() {
   window.open(
-    "https://share.google/2SJgnqVnUBYMV3awC",
+    "https://g.page/r/CVrwjouOR867EAI/review",
     "_blank"
   );
 }
@@ -184,6 +184,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
