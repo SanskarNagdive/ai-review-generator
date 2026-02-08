@@ -15,7 +15,24 @@ exports.handler = async (event) => {
         {
           parts: [
             {
-              text: `Generate 3 short Google reviews for Dr. ${data.doctor} in ${data.city} for ${data.treatment}. Separate each review with two line breaks.`
+text: `
+Generate exactly 3 different Google reviews in English.
+
+Doctor: Dr. ${data.doctor}
+City: ${data.city}
+Treatment: ${data.treatment}
+Star Rating: ${data.stars}
+
+Instructions:
+- Natural, human tone
+- Simple language
+- Mention the city only once
+- 60 to 90 words per review
+- No emojis, hashtags, prices, or phone numbers
+- No medical guarantees
+- Write like a real person sharing experience
+- Separate each review with two line breaks
+`
             }
           ]
         }
