@@ -153,12 +153,12 @@ function copyText(text) {
 /* ================= POST TO GOOGLE ================= */
 
 function postGoogle() {
-  const placeId = "YOUR_GOOGLE_PLACE_ID"; // Replace this
   window.open(
-    `https://search.google.com/local/writereview?placeid=${placeId}`,
+    "https://share.google/2SJgnqVnUBYMV3awC",
     "_blank"
   );
 }
+
 
 /* ================= DUPLICATE CHECK ================= */
 
@@ -188,3 +188,4 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
