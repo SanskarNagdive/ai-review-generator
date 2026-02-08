@@ -29,7 +29,6 @@ async function generateReview() {
   const city = document.getElementById("city").value.trim();
   const treatment = document.getElementById("treatment").value.trim();
   const tone = document.getElementById("tone").value;
-  const emoji = document.getElementById("emoji").checked;
   const length = document.getElementById("length").value;
   const loading = document.getElementById("loading");
 
@@ -44,7 +43,6 @@ async function generateReview() {
     treatment,
     stars: selectedStars,
     tone,
-    emoji,
     length
   };
 
@@ -186,5 +184,6 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
