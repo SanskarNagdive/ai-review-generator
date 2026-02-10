@@ -33,7 +33,7 @@ async function generateReview() {
   const language = document.getElementById("language").value;
   const loading = document.getElementById("loading");
 
-  if (!doctor || !city || !treatment) {
+  if (!doctor || !location || !treatment) {
     alert("Please fill all required fields.");
     return;
   }
@@ -186,6 +186,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
