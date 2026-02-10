@@ -16,34 +16,43 @@ async function generateReview() {
   const doctor = document.getElementById("doctor").value.trim();
   const location = document.getElementById("location").value;
   const treatment = document.getElementById("treatment").value.trim();
+  const comment = document.getElementById("comment").value;
   const length = document.getElementById("length").value;
   const language = document.getElementById("language").value;
   const loading = document.getElementById("loading");
 
   if (!doctor || !location || !treatment || !comment) {
-
     alert("Please fill all required fields.");
     return;
   }
 
   const payload = {
-  doctor,
-  location,
-  treatment,
-  comment,
-  length,
-  language
-};
+    doctor,
+    location,
+    treatment,
+    comment,
+    length,
+    language
+  };
 
   try {
     loading.classList.remove("hidden");
 
     const response = await fetch("/.netlify/functions/generate-review", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(payload)
     });
 
     const result = await response.json();
+
+    if (!result || !result.review) {
+      alert("Server error. Please try again.");
+      console.log(result);
+      return;
+    }
 
     await displayReviews(result.review);
 
@@ -185,6 +194,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
