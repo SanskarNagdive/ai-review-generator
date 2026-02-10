@@ -139,11 +139,23 @@ function copyText(text) {
 /* ================= POST TO GOOGLE ================= */
 
 function postGoogle() {
-  window.open(
-    "https://g.page/r/CVrwjouOR867EAI/review",
-    "_blank"
-  );
+  const location = document.getElementById("location").value;
+
+  const branchLinks = {
+    Nagpur: "https://g.page/r/CfKOK0J3yq2vEBE/review",
+    Itarsi: "https://g.page/r/CWUODJ90WG1rEBE/review",
+    Betul: "https://g.page/r/CQMT68pfmtDcEBI/review"
+  };
+
+  const redirectUrl = branchLinks[location];
+
+  if (redirectUrl) {
+    window.open(redirectUrl, "_blank");
+  } else {
+    alert("Branch link not found for this location.");
+  }
 }
+
 
 
 /* ================= DUPLICATE CHECK ================= */
@@ -174,6 +186,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
