@@ -1,26 +1,14 @@
 /* ================= GLOBAL VARIABLES ================= */
 
-let selectedStars = 5;
 let lastReviews = [];
 
 /* ================= STAR RATING SYSTEM ================= */
 
-document.querySelectorAll(".stars span").forEach(star => {
-  star.addEventListener("click", () => {
-    selectedStars = parseInt(star.getAttribute("data-value"));
-    highlightStars(selectedStars);
-  });
-});
 
-function highlightStars(value) {
-  document.querySelectorAll(".stars span").forEach(star => {
-    star.style.opacity =
-      parseInt(star.getAttribute("data-value")) <= value ? "1" : "0.3";
-  });
-}
 
-// Default 5 stars selected
-highlightStars(5);
+
+
+
 
 /* ================= GENERATE REVIEW ================= */
 
@@ -186,6 +174,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
