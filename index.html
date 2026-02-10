@@ -12,8 +12,15 @@
     <h1>✨ AI Review Assistant</h1>
 
     <div class="form-group">
-      <input type="text" id="doctor" placeholder="Doctor Name">
-      <input type="text" id="city" placeholder="City">
+      <input type="text" id="doctor" value="Dr. Abhishekh Bhalotia">
+      <select id="location">
+  <option value="Nagpur">Nagpur</option>
+  <option value="Mumbai">Mumbai</option>
+  <option value="Pune">Pune</option>
+  <option value="Delhi">Delhi</option>
+  <option value="Bangalore">Bangalore</option>
+</select>
+
       <input type="text" id="treatment" placeholder="Treatment">
     </div>
 
@@ -47,7 +54,12 @@
         <option value="long">Long</option>
       </select>
 
-      
+      <select id="language">
+  <option value="English">English</option>
+  <option value="Hindi">Hindi</option>
+  <option value="Marathi">Marathi</option>
+</select>
+
     </div>
 
     <button class="generate-btn" onclick="generateReview()">
@@ -65,5 +77,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
