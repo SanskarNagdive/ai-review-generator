@@ -30,7 +30,6 @@ async function generateReview() {
   doctor,
   location,
   treatment,
-  stars: selectedStars,
   tone,
   length,
   language
@@ -186,6 +185,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
