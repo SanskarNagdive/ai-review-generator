@@ -20,7 +20,8 @@ async function generateReview() {
   const language = document.getElementById("language").value;
   const loading = document.getElementById("loading");
 
-  if (!doctor || !location || !treatment) {
+  if (!doctor || !location || !treatment || !comment) {
+
     alert("Please fill all required fields.");
     return;
   }
@@ -29,6 +30,7 @@ async function generateReview() {
   doctor,
   location,
   treatment,
+  comment,
   length,
   language
 };
@@ -183,6 +185,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
