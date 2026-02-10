@@ -16,7 +16,6 @@ async function generateReview() {
   const doctor = document.getElementById("doctor").value.trim();
   const location = document.getElementById("location").value;
   const treatment = document.getElementById("treatment").value.trim();
-  const tone = document.getElementById("tone").value;
   const length = document.getElementById("length").value;
   const language = document.getElementById("language").value;
   const loading = document.getElementById("loading");
@@ -185,6 +184,7 @@ function calculateSimilarity(str1, str2) {
 
   return intersection.size / Math.max(set1.size, set2.size);
 }
+
 
 
 
