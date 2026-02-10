@@ -21,36 +21,32 @@ const response = await fetch(
         {
           parts: [
             {
+              
               text: `
-Generate exactly 3 different Google reviews.
+Generate exactly 3 completely different Google reviews.
 
 Doctor: ${data.doctor}
 Location: ${data.location}
 Treatment: ${data.treatment}
-Star Rating: ${data.stars}
+Comments: ${data.comment}
 
 Language: Write the review completely in ${data.language}.
 
 Length requirement:
 Each review must be ${selectedLength}.
 
-Instructions:
+Formatting Rules:
+- Number each review as 1., 2., and 3.
+- Separate each review with two line breaks.
 - Natural, human tone
 - Simple language
-- Mention the location only once
+- Mention the location only once per review
 - No emojis, hashtags, prices, or phone numbers
 - No medical guarantees
 - Write like a real person sharing experience
 - Do not repeat sentences across reviews
-- Separate each review with two line breaks
 `
-            }
-          ]
-        }
-      ]
-    })
-  }
-);
+
 
 
     const result = await response.json();
